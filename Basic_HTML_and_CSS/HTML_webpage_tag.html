@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML &lt;col&gt; Tag Example</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 30px auto;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+        col.col1 {
+            background-color: #f9e79f;
+        }
+        col.col2 {
+            background-color: #aed6f1;
+        }
+        col.col3 {
+            background-color: #d5f5e3;
+        }
+        h2.center-title {
+            text-align: center;
+        }
+        .center-title {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="center-title">Using the &lt;col&gt; Tag to Style Table Columns</h2>
+    <h2 class="center-title">Using the &lt;col&gt; Tag to Style Table Columns</h2>
+    <table>
+        <colgroup>
+            <col class="col1">
+            <col class="col2">
+            <col class="col3">
+        </colgroup>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Favorite Color</th>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>New York</td>
+            <td>Blue</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>London</td>
+            <td>Green</td>
+        </tr>
+        <tr>
+            <td>Charlie</td>
+            <td>Paris</td>
+            <td>Yellow</td>
+        </tr>
+    </table>
+</body>
+</html>

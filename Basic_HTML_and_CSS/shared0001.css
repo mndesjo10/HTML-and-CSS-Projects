@@ -1,0 +1,97 @@
+/*-----------------------------------------------
+RESERVATIONS SECTION STYLING
+-----------------------------------------------*/
+#contact {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5f5e1; /* Light beige background */
+}
+
+.heading-padding {
+    color: #E91C1C; /* Red text colour */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.Reservations h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.Reservations h2 span {
+    font-size: 28px;
+    font-weight: 900;
+    font-variant: small-caps;
+    color: #E91C1C;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.rsvp-text {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-rsvp {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input.rsvp {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+form input.rsvp:focus {
+    outline: none;
+    border-color: #E91C1C; /* Red focus border */
+    box-shadow: 0 0 8px rgba(233, 28, 28, 0.15); /* Light red glow */
+}
+
+form .submit input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #E91C1C; /* Red background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form .submit input[type="submit"]:hover {
+    background-color: darkred; /* Dark red hover effect */
+}
+
+.form-spacer {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.terms {
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+}
+
+/*-----------------------------------------------
+FOOTER STYLING
+-----------------------------------------------*/
+#footer {
+    background-color: rgba(100, 65, 0, 0.3); /* Semi-transparent brown */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+}

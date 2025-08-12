@@ -1,0 +1,575 @@
+/* --- Adventure container box for heading and subtext --- */
+.adventure-container {
+    background-color: rgba(100, 65, 0, .3);
+    padding: 28px 24px 18px 24px;
+    border-radius: 12px;
+    margin: 32px auto 18px auto;
+    max-width: 500px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adventure-heading {
+    text-align: center;
+    font-size: 1.7em;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    color: #000 !important;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.adventure-subtext {
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: 700;
+        color: #555;
+        margin-bottom: 2px;
+        font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.adventure-note {
+    text-align: center;
+    font-size: 0.98em;
+    color: #888;
+    margin-bottom: 18px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.reservation-section {
+    background-color: #ede3c3;
+    padding: 24px 24px 18px 24px;
+    border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    margin: 0 auto 32px auto;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        border: 1.5px solid #e0d6b8;
+        background-color: #fffef8;
+}
+
+.reservations-heading {
+    text-align: center;
+    font-size: 2.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    color: #222;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+/*-----------------------------------------------
+GENERIC STYLES
+-----------------------------------------------*/
+html {
+    font-family: sans-serif;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-size: 14px;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+footer, 
+nav {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    line-height: 50px;
+    font-weight: 900;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+	color: #E91C1C;
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+h1::after { /* This is the underline */
+    display: block;
+    content: " ";
+    height: 2px;
+    width: 150px;
+    background: #E91C1C;
+    margin: 5px auto 40px;
+    box-shadow: 5px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    line-height: 50px;
+    color: #E91C1C;
+}
+
+h3 {
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+h4 {
+    padding-top: 25px;
+    line-height: 40px;
+    padding-bottom: 0px;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+p {
+    font-weight: 300;
+    line-height: 30px;
+    padding-bottom: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.heading-padding {
+    padding-bottom: 40px;
+}
+
+section {
+    padding-top: 50px;
+    margin-top: 50px;
+}
+
+.navbar {
+    height: 50px;
+    max-height: 340px;
+    display: inline-block;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.clearfix::after, /* :after is now ::after with a double colon */
+.container::after,
+.navbar::after {
+    clear: both;
+    display: table;
+    content: " ";
+}
+
+.wrap {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* This ensures that the image cannot render outside of their container without any scrollbars*/
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.menu-container {
+    max-height: 340px;
+    margin: 0% auto;
+    content: " ";
+    /* top: 0;
+    left: 0; */
+    /* position: absolute; */ /* to the top edge of the screen */
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+}
+
+/*-----------------------------------------------
+HOME SECTION STYLES
+-----------------------------------------------*/
+#home {
+    background: url(../images/planets.jpg) no-repeat 50% 50%;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    display: block;
+    height: auto;
+    padding-top: 350px;
+    padding-bottom: 500px;
+    color: #fff;
+}
+
+.head-main {
+    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.9);
+    font-variant: small-caps;
+    color: #fff;
+    letter-spacing: 5pt;
+    word-spacing: 21pt;
+    font-size: 4.5em;
+    text-align: left;
+    font-family: impact, sans-serif;
+    line-height: 2;
+    font-weight: 900;
+    border: 5px double #fff;
+    padding: 10px;
+}
+
+.head-sub-main {
+    font-size: 23px;
+    font-weight: 500;
+    padding: 50px 20px 10px 20px;
+    text-transform: uppercase;
+}
+
+.head-last {
+    font-size: 18px;
+    font-weight: 900;
+    padding: 5px 20px 20px 20px;
+    border: 1px dotted #fff;
+    padding: 5px;
+}
+
+/*-----------------------------------------------
+CONTACT STYLES
+-----------------------------------------------*/
+
+#contact {
+    background-color: #f5f5d4;
+    padding: 20px;
+    text-align: center;
+}
+
+.reservation-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* ... rest of your styles ... */
+.reservation-section {
+    background-color: #fffef8;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.reservations-heading {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #a93226;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+.adventure-heading {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+
+.reserve-text {
+    font-size: 1em;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.contact-info-text {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+#reservation-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 95%;
+    max-width: 500px;
+    min-width: 300px;
+    font-size: 1.2em;
+    padding: 16px 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #333;
+    color: white;
+    font-size: 1em;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.submit-terms {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.submit-terms button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: auto; /* Adjust to content width */
+    margin-left: 0; /* Remove auto margin */
+    display: inline-block; /* Adjust display */
+}
+
+.terms-text {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0px auto;
+    background-color: rgba(100, 65, 0, .3);
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+#contact {
+    background-color: #f5f3f3;
+}
+
+.reservation {
+    width: 95%;
+    max-width: 500px;
+    padding: 24px 18px 18px 18px;
+    border-radius: 12px;
+    margin: 32px auto;
+    background-color: rgba(100, 65, 0, 0.10);
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservation h2 {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    color: #13161B;
+    font-weight: 500;
+    font-size: 1.3em;
+    letter-spacing: 0pt;
+    word-spacing: 0pt;
+}
+
+.reservation h2 span {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    color: #13161B;
+    font-weight: 900;
+    font-size: 1.5em;
+    font-variant: small-caps;
+    letter-spacing: 4pt;
+    word-spacing: .3pt;
+}
+
+.reservation p {
+    color: #13161B;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.reservation form {
+    font-size: 15px;
+    outline: none;
+    font-weight: 600;
+    color: #8D8E8F;
+    padding: 0;
+    width: 100%;
+    border: none;
+    margin: 0 auto;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+.reservation input[type="text"] {
+    font-size: 15px;
+    outline: none;
+    font-weight: 400;
+    color: #222;
+    padding: 10px 14px;
+    width: 100%;
+    border: 1px solid #bbb;
+    margin: 0;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04);
+    font-family: 'Raleway', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.reservation input[type="text"]:hover,
+.reservation input[type="text"]:focus {
+    border-color: #E91C1C;
+    box-shadow: 0 0 8px rgba(233, 28, 28, 0.15);
+}
+
+form .submit input[type="submit"]:hover {
+    background-color: #333;
+}
+
+.form-spacer {
+    padding: 10px 0 0 0;
+    width: 100%;
+    text-align: left;
+}
+
+.submit-terms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.terms-text {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #000;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif; 
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.terms-text:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+.submit-terms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.submit-terms button {
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    width: auto;
+    min-width: 90px;
+    font-size: 15px;
+    padding: 6px 18px;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+    border-radius: 7px;
+    background-color: #797a7b;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.submit-terms button:hover {
+  color: #000;
+  background-color: #8d8e8f;
+  box-shadow: inset 1px 2px 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+.terms-text {
+  font-size: 0.9em;
+  color: #777;
+  margin-left: 10px;
+}
+
+/*-----------------------------------------------
+FOOTER STYLES
+-----------------------------------------------*/
+#footer {
+    background-color: rgba(100, 65, 0, .3);
+    color: #000;
+    text-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 4);
+    padding: 20px 50px 20px 50px;
+    text-align: right;
+}
+
+/*-----------------------------------------------
+MEDIA QUERIES
+-----------------------------------------------*/
+
+@media all and (max-width: 64px) and (min-width:381px) {
+    .head-main {
+        font-size: 28px;
+    }
+}
+
+@media all and (max-width: 381px) and (min-width: 200px) {
+    .head-main {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 950px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}

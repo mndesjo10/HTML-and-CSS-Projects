@@ -1,0 +1,188 @@
+body {
+    background-color: #fff;
+}
+
+h1 {
+    color: rgba(8, 141, 165, 1);
+    margin-left: 100px;
+    text-shadow: 1px .5px 4px rgba(0, 0, 0, 0.6);
+}
+
+.container {
+    width: 450px;
+    height: 450px;
+    background-color: #faebd7;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+/* -----------------------------s--------
+SELECT ALL SQUARES IN THE ARRAY 
+-----------------------------------------*/
+.container .squares:nth-child(-n+4) {
+    /* Remove background-image and color */
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 25%;
+    cursor: pointer;
+    transition: transform .5s ease-in-out;
+    overflow: hidden; /* Ensures image stays within rounded corners */
+    background: none; /* Remove background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*------------------------------------------
+SELECT ALL SQUARES PARAGRAPHS IN THE ARRAY
+--------------------------------------------*/
+.squares:nth-child(-n+4) p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 1px 4px rgba(0, 0, 0, 0.8);   
+}
+
+/*-------------------------------------------
+INDUVIDUAL SELECT A SQUARE IN THE ARRAY
+---------------------------------------------*/
+.squares:nth-child(1) {
+    background-color: #4240ff;
+}
+
+.squares:nth-child(2) {
+    background-color: #ab3fdd;
+}
+
+.squares:nth-child(3) {
+    background-color: #ae163e;
+}
+
+.squares:nth-child(4) {
+    background-color: #00b200;
+}
+
+/*-------------------------------------------
+HOVER, TRANSLATE & TRANSFORM EFECTS
+---------------------------------------------*/
+.container .squares:nth-child(-n+4):hover {
+    background-image: url("../images/icons/smileyface1.png");
+    transform: scale(.5);
+    animation-name: race;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(2.5, .2, .3, 2);
+}
+
+.squares:nth-child(1):hover {
+    background: #13b4ff;
+}
+
+.squares:nth-child(2):hover {
+    background: #d861af;
+}
+
+.squares:nth-child(3):hover {
+    background: #81250f;
+}
+
+.squares:nth-child(4):hover {
+    background: #77b800;
+}
+
+/*-----------------------------------------------
+ANIMATION EFECTS
+------------------------------------------------*/
+@keyframes race {
+    0%, 100% {
+        transform: translateY(0px);
+        background-image: url("../images/icons/smileyface1.png");
+    }
+    50% {
+        transform: translateY(300px);
+    }
+}
+
+.squares img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25%;
+    display: block;
+    /* Remove any filter or opacity if present */
+    filter: none;
+    opacity: 1;
+}
+
+.squares p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 1px 4px rgba(0,0,0,0.8);
+    bottom: 10px;
+    left: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+/* Make .squares position: relative for overlay */
+.squares {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay for Box 1 */
+.squares:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #4240ff;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    border-radius: 25%;
+}
+
+/* Overlay for Box 2 */
+.squares:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ab3fdd;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    border-radius: 25%;
+}
+
+/* Overlay for Box 3 */
+.squares:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ae163e;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    border-radius: 25%;
+}
+
+/* Overlay for Box 4 */
+.squares:nth-child(4)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #00b200;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    border-radius: 25%;
+}

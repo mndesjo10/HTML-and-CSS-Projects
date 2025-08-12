@@ -1,0 +1,69 @@
+.font_1 {
+    background-color: black;
+    color: yellow;
+    font-size: large;
+}
+.font_1 {
+    background-color: black;
+    color: yellow;
+    font-size: large;
+}
+.font_1 {
+    background-color: black;    /*-------------------------------
+        HOME SECTION STYLES
+    -------------------------------*/
+    #home {
+        background: url(../images/planets.jpg) no
+    color: yellow;
+    font-size: large;
+}
+.font_2 {
+    background-color: darkblue;
+    color: white;
+    font-size: medium;
+}
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+/*-------------------------------
+    GENERIC STYLES
+.font_1 {
+    background-color: black;
+    color: yellow;
+    font-size: large;
+}
+.font_1 {
+    background-color: black;
+    color: yellow;
+    font-size: large;
+}
+```css
+.font_1 {
+    background-color: black;
+    color: yellow;
+    font-size: large;
+}
+.font_2 {
+    background-color: darkblue;
+    color: white;
+    font-size: medium;
+}
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+/*-------------------------------
+    GENERIC STYLES
