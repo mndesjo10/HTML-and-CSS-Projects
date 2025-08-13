@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK National Parks - Lake District in Winter</title>
+    <link rel="stylesheet" href="one_page_website.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>UK National Parks</h1>
+        <p>Exploring the beauty of the Lake District in Winter</p>
+    </header>
+
+    <main>
+        <section id="lake-district-winter">
+            <h2>Lake District in Winter</h2>
+                <h3>Video</h3>
+                <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/yXAToLhHonQ?si=G2odLpZmpkbGBtNG" title="Lake District Drives | A winter drive in the Lakes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <h3>Gallery</h3>
+            <div class="image-gallery">
+                <img src="images/lake-district-winter-1.jpg" alt="Snowy Lake District landscape">
+                <img src="images/lake-district-winter-2.jpg" alt="Frozen lake in the Lake District">
+                <img src="images/lake-district-winter-3.jpg" alt="Winter hiking trail in the Lake District">
+            </div>
+
+            <p class="description">
+                The Lake District transforms into a magical winter wonderland during the colder months. Snow-capped mountains, frozen lakes, and crisp air create a breathtaking landscape.
+            </p>
+        </section>
+    </main>
+
+    <section id="contact-form">
+        <h2>Contact Us</h2>
+        <form>
+            <div class="form-group">
+                <label for="firstName">First Name:</label><br>
+                <input type="text" id="firstName" name="firstName" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label><br>
+                <input type="text" id="lastName" name="lastName" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9\-\+\s]+" required class="form-input" placeholder="e.g. +44 1234 567890">
+            </div>
+            <div class="form-group">
+                <label for="email">Contact Email:</label><br>
+                <input type="email" id="email" name="email" required class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="email">Contact Email:</label><br>
+                <input type="email" id="email" name="email" required class="form-input">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#" target="_blank">terms and conditions</a>.</label>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 UK National Parks</p>
+    </footer>
+
+</body>
+</html>

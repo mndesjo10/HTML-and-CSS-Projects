@@ -1,0 +1,48 @@
+body {
+    background-color: lightblue;
+    color: darkblue;
+    font-family: sans-serif; /* Added a default font for better readability */
+    margin: 0; /* Reset default body margins */
+    padding: 0;
+}
+
+h1 {
+    /* Add specific styling for H1 elements here */
+    text-align: center;
+}
+
+/* h2 styling can be added here if needed */
+
+p {
+    /* Add specific styling for paragraph elements here */
+    line-height: 1.6; /* Improve paragraph readability */
+}
+
+a {
+    color: darkblue; /* Ensure links are also dark blue */
+    text-decoration: none; /* Remove underline from links */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover for better UX */
+}
+
+.tech-academy-logo {
+    border: 2px dashed red;
+    width: 600px;
+    height: 300px;
+    display: block; /* Make the image a block-level element */
+    margin: 20px auto; /* Center the image horizontally and add some margin */
+}
+
+.center-text {
+    text-align: center;
+}
+
+.video-frame {
+    width: 560px;
+    height: 315px;
+    border: none; /* Removes the iframe border */
+    display: block;
+    margin: 20px auto; /* Center the video horizontally and add some margin */
+}
