@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UK National Parks - Lake District in Winter</title>
-    <link rel="stylesheet" href="one_page_website.css">
+    <link rel="stylesheet" href="CSS/one_page_website.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -21,14 +21,23 @@
             <h2>Lake District in Winter</h2>
                 <h3>Video</h3>
                 <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/yXAToLhHonQ?si=G2odLpZmpkbGBtNG" title="Lake District Drives | A winter drive in the Lakes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+                    <video 
+                        width="560" 
+                        height="315" 
+                        controls 
+                        autoplay 
+                        muted 
+                        loop>
+                        <source src="videos/lake-district-winter.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
 
             <h3>Gallery</h3>
             <div class="image-gallery">
-                <img src="images/lake-district-winter-1.jpg" alt="Snowy Lake District landscape">
-                <img src="images/lake-district-winter-2.jpg" alt="Frozen lake in the Lake District">
-                <img src="images/lake-district-winter-3.jpg" alt="Winter hiking trail in the Lake District">
+                <img src="images/lake-district-winter-1.jpg" alt="Snowy Lake District landscape" data-large="images/lake-district-winter-1.jpg" class="thumbnail">
+                <img src="images/lake-district-winter-2.jpg" alt="Frozen lake in the Lake District" data-large="images/lake-district-winter-2.jpg" class="thumbnail">
+                <img src="images/lake-district-winter-3.jpg" alt="Winter hiking trail in the Lake District" data-large="images/lake-district-winter-3.jpg" class="thumbnail">
             </div>
 
             <p class="description">
@@ -68,5 +77,12 @@
         <p>&copy; 2025 UK National Parks</p>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Enlarged Image">
+    </div>
+
+    <script src="JS/one_page_website.js" defer></script>
 </body>
 </html>
