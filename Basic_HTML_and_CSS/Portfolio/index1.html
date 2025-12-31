@@ -41,11 +41,6 @@
                 padding-right: 20px; /* Adds padding to the right of the paragraph element */
             }
 
-            /* Paragraph element hover effect */
-            p:hover {
-                /* Removed scaling effect for more professional appearance */
-            }
-
             /* Center class - this applies to all elements with the class "center" */
             .center {
                 text-align: center; /* This center aligns the text */
@@ -171,6 +166,36 @@
             /* Navbar home button */
             .Navbar a.active { /* This targets the a element on the navbar with the "active" class */
                 background-color: darkgray;
+            }
+
+            /* Mobile menu button */
+            .mobile-menu-btn {
+                display: none; /* Hidden by default on larger screens */
+            }
+
+            /* Mobile responsive menu */
+            @media screen and (max-width: 768px) {
+                .Navbar a {
+                    display: none; /* Hide links by default on mobile */
+                    width: 100%;
+                    text-align: center;
+                }
+                
+                .Navbar.show-menu a {
+                    display: block; /* Show links when menu is toggled */
+                }
+                
+                .mobile-menu-btn {
+                    display: block;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    color: white;
+                    background: none;
+                    border: none;
+                    font-size: 24px;
+                    cursor: pointer;
+                }
             }
             /***** END OF NAVBAR STYLING *****/
 
@@ -302,6 +327,204 @@
                 font-family: "Trebuchet MS", Optima;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             }
+
+            /* Slideshow Styles */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: 30px auto;
+                overflow: hidden;
+                border-radius: 8px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            }
+
+            .mySlides {
+                display: none;
+                width: 100%;
+                height: 400px;
+            }
+
+            .mySlides img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                background-color: rgba(0,0,0,0.5);
+            }
+
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @keyframes fade {
+                from {opacity: 0.4}
+                to {opacity: 1}
+            }
+    
+            /* Popup Contact Form Styles */
+            .popup-container {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                justify-content: center;
+                align-items: center;
+            }
+
+            .popup-form {
+                background-color: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                max-width: 500px;
+                width: 90%;
+                position: relative;
+                animation: fadeInUp 0.5s ease;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .popup-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .popup-close {
+                font-size: 24px;
+                cursor: pointer;
+                background: none;
+                border: none;
+                color: #333;
+            }
+
+            .popup-close:hover {
+                color: #ff0000;
+            }
+
+            .popup-title {
+                font-size: 24px;
+                margin: 0;
+                color: #2c3e50;
+            }
+
+            .popup-form-group {
+                margin-bottom: 15px;
+            }
+
+            .popup-label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #2c3e50;
+            }
+
+            .popup-input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+
+            .popup-submit {
+                width: 100%;
+                padding: 12px;
+                background-color: #2c3e50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+
+            .popup-submit:hover {
+                background-color: #3498db;
+            }
+
+            .popup-footer {
+                margin: 20px;
+                text-align: center;
+                font-size: 14px;
+                color: #666;
+            }
+
+            .contact-button {
+                background-color: #2c3e50;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+                display: inline-block;
+                margin: 10px 0;
+            }
+
+            .contact-button:hover {
+                background-color: #3498db;
+            }
         </style>
     </head>
     <body class="Background">
@@ -335,7 +558,7 @@
                         <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
                         <br>field of battle and to command such unswervingly dutiful actors or troops.
                     </q>
-                    <br> -Joseph Weizenbuam
+                    <br> -Joseph Weizenbaum
                 </strong>
                 <br>
                 <br> My name is Joel Mendes. Welcome to my portfolio website. On it, I will tell you about my background.
@@ -391,15 +614,8 @@
             <!-- Contact form, right column -->
             <div class="Column_1 Column_tall">
                 <h1>Contact</h1>
-                <form action="#" method="POST" id="contactForm">
-                    <label>Name:</label>
-                    <input type="text" id="name" placeholder="Please enter your name here" required>
-                    <label>Email:</label>
-                    <input type="email" id="Email" name="Email" placeholder="Please enter your email here" required>
-                    <label>Message:</label>
-                    <textarea id="Message" name="Message" placeholder="Please write your message here" rows="5" required></textarea>
-                    <input type="Submit" value="SUBMIT">
-                </form>
+                <p>Click the button below to open the contact form:</p>
+                <button class="contact-button" onclick="openContactForm()">Contact Me</button>
             </div>
         </div>
 
@@ -409,8 +625,102 @@
             <br>
         </footer>
 
+        <!-- Slideshow section -->
+        <div class="slideshow-container" id="slideshow">
+            <div class="mySlides fade">
+                <img src="img/slideshow1.jpg" alt="Project 1">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="img/slideshow2.jpg" alt="Project 2">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="img/slideshow3.jpg" alt="Project 3">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Popup Contact Form -->
+        <div class="popup-container" id="popupContactForm">
+            <div class="popup-form">
+                <div class="popup-header">
+                    <h2 class="popup-title">Contact Me</h2>
+                    <button class="popup-close" onclick="closeContactForm()">&times;</button>
+                </div>
+                <form id="contactForm">
+                    <div class="popup-form-group">
+                        <label class="popup-label" for="popupName">Name:</label>
+                        <input type="text" id="popupName" name="name" required class="popup-input" placeholder="Please enter your name">
+                    </div>
+                    <div class="popup-form-group">
+                        <label class="popup-label" for="popupEmail">Email:</label>
+                        <input type="email" id="popupEmail" required class="popup-input" placeholder="Please enter your email address">
+                    </div>
+                    <div class="popup-form-group">
+                        <label class="popup-label" for="popupMessage">Message:</label>
+                        <textarea id="popupMessage" name="message" required class="popup-input" placeholder="Please write your message"></textarea>
+                    </div>
+                    <button type="submit" class="popup-submit">Send Message</button>
+                </form>
+                <div class="popup-footer">
+                    I'll get back to you as soon as possible!
+                </div>
+            </div>
+        </div>
+
         <script>
             // JavaScript functionality for the portfolio site
+
+            // Initialize slideshow
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Auto advance slides every 3 seconds
+            setInterval(() => {
+                plusSlides(1);
+            }, 3000);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            // Current slide control
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
 
             // Smooth scrolling to sections
             function scrollToSection(sectionId) {
@@ -462,38 +772,9 @@
                 checkCurrentSection();
             });
 
-            // Initialize contact form
+            // Initialize contact form (handled by popup form event listener below)
             function initContactForm() {
-                const contactForm = document.getElementById('contactForm');
-                if (contactForm) {
-                    contactForm.addEventListener('submit', function(e) {
-                        e.preventDefault();
-
-                        // Get form values
-                        const name = document.getElementById('name').value;
-                        const email = document.getElementById('Email').value;
-                        const message = document.getElementById('Message').value;
-
-                        // Simple validation
-                        if (!name || !email || !message) {
-                            alert('Please fill out all fields,');
-                            return;
-                        }
-
-                        // Validate email format
-                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!emailRegex.test(email)) {
-                            alert('Please enter a valid email address.');
-                            return;
-                        }
-
-                        // Simulate form submission
-                        alert(`Thank you, ${name}! Your message has been sent successfully.`);
-
-                        // Reset form
-                        contactForm.reset();
-                    });
-                }
+                // Contact form initialization is handled in the popup form section
             }
 
             // Handle scroll animations
@@ -588,46 +869,73 @@
                     document.body.style.opacity = '1';
                     document.body.style.transition = 'opacity 0.5s ease';
                 }, 100);
+            });
+
+            // Add tooltip functionality for links
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.textDecoration = 'underline';
+                    this.style.color = '#0056b3';
                 });
 
-                // Add tooltip functionality for links
-                document.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('mouseenter', function() {
-                        this.style.textDecoration = 'underline';
-                        this.style.color = '#0056b3';
-                    });
-
-                    link.addEventListener('mouseleave', function() {
-                        this.style.textDecoration = 'none';
-                        this.style.color = 'blue';
-                    });
+                link.addEventListener('mouseleave', function() {
+                    this.style.textDecoration = 'none';
+                    this.style.color = 'blue';
                 });
+            });
 
-                // Highlight upgraded JavaScript features in the About section
-                function highlightUpgradedLines() {
-                    const aboutParagraph = document.querySelector('#About .Column_1 p');
-                    if (aboutParagraph) {
-                        let html = aboutParagraph.innerHTML;
+            // Function to open contact form popup
+            function openContactForm() {
+                document.getElementById('popupContactForm').style.display = 'flex';
+                // Prevent scrolling when form is open
+                document.body.style.overflow = 'hidden';
+            }
 
-                        // Highlight the lines that mention JavaScript upgrades
-                        html = html.replace(
-                            /(trained and experienced in the following web and programming languages: HTML, CSS, <span class="upgraded-feature">JavaScript<\/span>, SQL, C# and more\.)/, '<span class="upgraded-feature">$1</span>'
-                        );
+            // Function to close the popup contact form
+            function closeContactForm() {
+                document.getElementById('popupContactForm').style.display = 'none';
+                // Restore scrolling
+                document.body.style.overflow = 'auto';
+            }
 
-                        // Highlight the full-stack developer line if it mentions JavaScript
-                        html = html.replace(
-                            /(I am a full-stack developer and would love to work with you on your project\.)/, '<span class="upgraded-feature">$1</span>'
-                        );
+            // Close popup when clicking outside the form
+            document.getElementById('popupContactForm').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeContactForm();
+                }
+            });
 
-                        // Specifically highlight JavaScript in the list
-                        html = html.replace(/JavaScript/g, '<span class="upgraded-feature">JavaScript</span>');
+            // Handle form submission for popup form
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
 
-                        aboutParagraph.innerHTML = html;
-                    }
+                // Get form values
+                const name = document.getElementById('popupName').value.trim();
+                const email = document.getElementById('popupEmail').value.trim();
+                const message = document.getElementById('popupMessage').value.trim();
+
+                // Validate form
+                if (!name || !email || !message) {
+                    alert('Please fill out all fields.');
+                    return;
                 }
 
-                // Run highlighting after DOM is loaded
-                document.addEventListener('DOMContentLoaded', highlightUpgradedLines);
+                // Validate email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+
+                // Show success message
+                alert(`Thank you, ${name}! Your message has been sent successfully.`);
+
+                // Reset form
+                this.reset();
+
+                // Close the popup
+                closeContactForm();
+            });
         </script>
     </body>
 </html>
