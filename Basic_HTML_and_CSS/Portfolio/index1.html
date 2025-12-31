@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joel Mendes - Software Developer Portfolio</title>
+        <style>
+            /***** GENERAL STYLING *****/
+            /* Body */
+            body {
+                margin: 0%; /* This ensures our site displays all the way to the edge of the browser screen */
+            }
+
+            /* Heading 1 elements */
+            h1 {
+                text-transform: uppercase; /* Capitalizing all h1 headings */
+                font-family: "Trebuchet MS", Optima; /* Sets the font family of all h1 headings */
+                text-align: center; /* Centering all h1 elements */
+                margin-top: 3%; /* Adds a small margin above h1 elements */
+                color: #1a1a1a; 
+            }
+
+            /* Heading 1 element hover effect */
+            h1:hover {
+                color: #2c5aa0; /* Changes to a professional blue on hover */
+                transition: color 0.3s ease; /* Smooth color transition */
+            }
+
+            /* Styling for portfolio title text */
+            .white-text {
+                color: #fff; /* This is used to change the color of the portfolio title text */
+            }
+
+            /* Paragraph elements */
+            p {
+                font-family: Perpetua, Rockwell Extra Bold;
+                text-align: justify; /* Justify text within paragraph elements */
+                letter-spacing: 1px; /* This expands the text slightly */
+                font-size: 20px;
+                padding-left: 20px; /* Adds padding to the left of the paragraph element */
+                padding-right: 20px; /* Adds padding to the right of the paragraph element */
+            }
+
+            /* Paragraph element hover effect */
+            p:hover {
+                /* Removed scaling effect for more professional appearance */
+            }
+
+            /* Center class - this applies to all elements with the class "center" */
+            .center {
+                text-align: center; /* This center aligns the text */
+            }
+
+            /* Center class hover effect - This only affects the quote, github link, and footer */
+            .center:hover {
+                transition: transform 0.3s ease; /* Smooth transition */
+                transform: scale(1.02); /* Subtle increase in size */
+            }
+
+            /* Anchor elements */
+            a {
+                color: #2c5aa0; /* Modern professional blue color */
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: #1a3a6b; /* Darker blue on hover */
+                text-decoration: underline;
+            }
+
+            .underline-link {
+                text-decoration: underline !important;
+            }
+
+            /* Quotation elements */
+            q {
+                font-style: italic; /* This makes the quote italicized */
+            }
+
+            /* Image elements */
+            img {
+                border-radius: 8px; /* Gives all images slightly rounded corners */
+                max-width: 100%; /* Ensures all images stay within the width of their container */
+                height: 340px; /* Sets the height of all images */
+                display: block; /* By specifying block display we can ensure our images are able to be centered */
+                margin-left: auto; /* In combination with "margin-right: auto" this centers all images */
+                margin-right: auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            /* Image element hover effects */
+            img:hover {
+                transform: scale(1.05); /* Subtle zoom on hover */
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            }
+
+            /* The @media rule is used in media queries to apply different styles for different media/types of devices */
+            /* On screens 576px and smaller the images will be 100px tall and centered vertically in the column */
+            @media screen and (max-width: 576px) {
+                img {
+                    height: 100px;
+                    margin-top: 150px;
+                }
+            }
+
+            /* Styling for footer element */
+            footer {
+                padding: 2%; /* This gives the footer padding that is equal to 2% of the width of the element's area */
+                background-color: white;
+            }
+            /***** END OF GENERAL STYLING *****/
+
+            /***** NAVBAR STYLING *****/
+            .Navbar {
+                overflow: hidden; /* This ensures that any content that overflows beyond the boundary of our nav bar is not displayed */
+                background-color: black; /* This colors the navbar black */
+                position: fixed; /* This keeps the navbar at the top of the screen as we scroll */
+                top: 0; /* This ensures no space is displayed above the navbar */
+                width: 100%; /* This makes the navbar span the entire width of the page */
+                z-index: 1000; /* This ensures other elements don't display over the navbar */
+                -webkit-animation: moveNav 5s; /* This applies the moveNav animation below for Safari 4.0 - 8.0 */
+                animation: moveNav 5s; /* This applies the moveNav animation for all other browsers */
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+            }
+
+            /* moveNav animation effect for moving the nav bar in from the left of the screen */
+            @keyframes moveNav {
+                from {left: -100vw;} /* The navbar is starting off screen to the left */
+                to {left: 0vw;} /* This moves the navbar into place on the screen */
+            }
+
+            /* Navbar links */
+            .Navbar a {
+                float: left; /* This specifies that the text floats on the left on the navbar */
+                display: block; /* This ensures that other text will be displayed on the same line or row, instead of a new line */
+                color: white; /* This is the font color for text on our navbar */
+                padding: 14px 16px; /* This adds padding around our text */
+                text-decoration: none; /* This gets rid of the underlines under the text on our navbar */
+                font-family: Avant Garde, Helvetica; /* This specifies the font family for text on our navbar */
+                font-size: 20px; /* This specifies the font size for text on our navbar */
+                text-align: center; /* This centers the text within its container */
+                position: relative; /* This sets the text relative to its normal positioning, allowing us to use the animation below */
+                -webkit-animation: moveNavText 5.75s; /* Animation for Safari 4.0 - 8.0 */
+                animation: moveNavText 5.75s; /* Applies the moveNavText animation for 5.75s */
+                transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+            }
+
+            /* moveNavText animation effect for moving the navbar text from above the view to the navbar */
+            @keyframes moveNavText {
+                from {top: -100vw;} /* This sets the navbar text 100% above the viewport */
+                to {top: 0vw;} /* This lowers the navbar text onto the navbar */
+            }
+
+            /* Screens 576px and smaller will display navbar links equally distributed */
+            @media screen and (max-width: 576px) {
+                .Navbar a{
+                    width: 25%; /* This makes each link take up 1/4 of the navbar */
+                    font-size: 12px;
+                }
+            }
+
+            /* Navbar hover effects */
+            .Navbar a:hover {
+                background-color: #f4f4f4; /* Defines the background color that will display when you hover over the link */
+                color: black; /* This defines the font color that will display when navbar a elements are hovered over */
+                font-weight: bold; /* This makes the text on the navbar bold when hovered over */
+            }
+
+            /* Navbar home button */
+            .Navbar a.active { /* This targets the a element on the navbar with the "active" class */
+                background-color: darkgray;
+            }
+            /***** END OF NAVBAR STYLING *****/
+
+            /***** VIDEO STYLING *****/
+            /* Formatting for background video */
+            #Typing_Video {
+                position: fixed; /* This fixes the video to the page */
+                right: 0; /* This ensures there is no space between the edge of the video and the edge of the page */
+                bottom: 0; /* This ensures no space between the bottom of the video and the bottom of the page */
+                min-width: 100%; /* This ensures the video is displayed across the full width of the page */
+                z-index: -1; /* This places the video behind the other elements on the page */
+            }
+
+            /* Screens that are 576px and smaller will not display the background video */
+            @media screen and (max-width: 576px) {
+                #Typing_Video {
+                    display: none;
+                }
+            }
+
+            /* Texts over the video */
+            .Video_Text {
+                background: rgba(0, 0, 0, 0.5); /* This provides a semi-transparent background for the text to sit over */
+                color: white; /* Makes the font color white */
+                width: 100%; /* Ensures the video-text container fills the width of the video */
+                padding: 20px; /* This adds padding around the video-text container so that the background goes slightly beyond the text */
+                position: relative; /* This sets the text relative to its normal positioning, allowing us to use the animation below */
+                -webkit-animation: moveVideoText 5.75s;
+                animation: moveVideoText 5.75s;
+            }
+
+            /* This animation effect causes the overlay video text to move up from the bottom of the page upon page load */
+            @keyframes moveVideoText {
+                from {top: -100vw;} /* This sets the position of the video text to above the viewport */
+                to {top: 0vw;} /* This moves the video text to the normal positioning on the viewport */
+            }
+            /***** END OF VIDEO STYLING *****/
+
+            /***** TABLE STYLING -  this section covers the styling of the columns and rows within the table *****/
+            * { /* The asterisk is a universal selector that applies this effect to all elements on the page */
+                box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
+            } 
+
+            .Column_1 {
+                float: left;
+                width: 50%; /* This ensures the column takes up half of the page width */
+                padding: 10px;
+                padding-top: 3%; /* This ensures there is space between the top of the column and our headings */
+                height: 400px; /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
+                background-color: #f2f2f2; /* Sets the background color of the columns with class Column_1 */
+            }
+
+            /* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
+            @media screen and (max-width: 576px) {
+                .Column_1 {
+                    overflow: auto;
+                }
+            }
+
+            .Column_2 {
+                float: left;
+                width: 50%;
+                padding: 10px;
+                padding-top: 1.9%;
+                height: 400px;
+                background-color: #4d4d4d;
+            }
+
+            /* This class is applied to the columns in the final row, overriding the height and padding to provide more room for the contact form  while keeping the rest of the formatting from Column_1 or Column_2 */
+            .Column_tall {
+                padding-top: 3.5%;
+                height: 450px;
+            }
+
+            /* This inserts something after the content of selected elements (in this case the elements with class "Row") */
+            .Row:after {
+                content: ""; /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
+                display: table; /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
+                clear: both; /* This clears any other elements from floating on the left or the right of an element */
+            }
+            /***** END OF TABLE STYLING *****/
+
+            /***** CONTACT FORM STYLING *****/
+            input[type=text],
+            input[type=email],
+            textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-top: 6px;
+                margin-bottom: 16px;
+                resize: vertical;
+                font-family: "Trebuchet MS", Optima;
+                transition: all 0.3s ease;
+            }
+
+            input[type=text]:hover {
+                box-shadow: 0 0 5px #00004d inset;
+            }
+
+            input[type=submit] {
+                background-color: black;
+                color: white;
+                font-weight: bold;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                font-family: "Trebuchet MS", Optima;
+                transition: all 0.3s ease;
+            }
+
+            input[type=submit]:hover {
+                background-color: white;
+                color: black;
+                transform: scale(1.5);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            }
+
+            form {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+                font-family: "Trebuchet MS", Optima;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+        </style>
+    </head>
+    <body class="Background">
+        <!-- Navbar -->
+        <div class="Navbar" id="navbar">
+             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+             <a class="active" href="#Home" onclick="scrollToSection('Home')">Home</a>
+             <a href="#About" onclick="scrollToSection('About')">About</a>
+             <a href="#GitHub" onclick="scrollToSection('GitHub')">GitHub</a>
+             <a href="#Contact" onclick="scrollToSection('Contact')">Contact</a>
+        </div>
+
+        <!-- Breaks inserted to add space between navbar and the first heading -->
+        <br>
+        <br>
+
+        <!-- Background video -->
+        <div id="Home">
+             <video autoplay muted loop id="Typing_Video">
+                <source src="img/video/Typing2.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+        <!-- Video text -->
+        <div class="Video_Text">
+            <h1 class="white-text">Joel Mendes's Portfolio!</h1>
+            <p class="center">
+                <strong>
+                    <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
+                        <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
+                        <br>field of battle and to command such unswervingly dutiful actors or troops.
+                    </q>
+                    <br> -Joseph Weizenbuam
+                </strong>
+                <br>
+                <br> My name is Joel Mendes. Welcome to my portfolio website. On it, I will tell you about my background.
+                <br>
+                <br> Thank you for stopping by and enjoy!
+            </p>
+        </div>
+
+        <!-- About section -->
+        <div class="Row" id="About">
+            <!-- Left column -->
+            <div class="Column_2">
+                <img src="img/html_custom03.png" alt="About Joel Mendes">
+            </div>
+            <!-- Right column -->
+            <div class="Column_1">
+                <h1>About</h1>
+                <p>
+                    I am a software developer who loves to code! As a father of two, I enjoy time with my family and traveling.
+                    <br>
+                    <br>I am a graduate of <a href="https://learncodinganywhere.com" target="_blank" rel="noopener" class="underline-link"> The Tech Academy</a>'s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more.
+                    <br>
+                    <br>I am a full-stack developer and would love to work with you on your project. <a href="#Contact" class="underline-link">Contact</a> me below!
+                </p>
+            </div>
+        </div>
+
+        <!-- GitHub section -->
+        <div class="Row" id="GitHub">
+            <!-- Left column -->
+            <div class="Column_1">
+                <h1>GitHub</h1>
+                <p>
+                    You can view my coding projects on my GitHub portfile here:
+                    <br>
+                    <span class="center" style="display: flex; justify-content: center;"><a href="https://github.com/mndesjo10" target="_blank" rel="noopener" class="underline-link">My GitHub</a></span>
+                </p>
+            </div>
+            <!-- Right column -->
+            <div class="Column_2">
+                <a href="https://github.com/mndesjo10" target="_blank" rel="noopener">
+                    <img src="img/GitHub.png" alt="GitHub Logo">
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact section -->
+        <div class="Row" id="Contact">
+            <!-- Contact image, left column -->
+            <div class="Column_2 Column_tall">
+                <img src="img/html_custom04.png" alt="Contact_Image">
+            </div>
+            <!-- Contact form, right column -->
+            <div class="Column_1 Column_tall">
+                <h1>Contact</h1>
+                <form action="#" method="POST" id="contactForm">
+                    <label>Name:</label>
+                    <input type="text" id="name" placeholder="Please enter your name here" required>
+                    <label>Email:</label>
+                    <input type="email" id="Email" name="Email" placeholder="Please enter your email here" required>
+                    <label>Message:</label>
+                    <textarea id="Message" name="Message" placeholder="Please write your message here" rows="5" required></textarea>
+                    <input type="Submit" value="SUBMIT">
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer section -->
+        <footer>
+            <p class="center">&copy; Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank" rel="noopener" class="underline-link">The Tech Academy</a></p>
+            <br>
+        </footer>
+
+        <script>
+            // JavaScript functionality for the portfolio site
+
+            // Smooth scrolling to sections
+            function scrollToSection(sectionId) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    window.scrollTo({
+                        top: element.offsetTop - 80, // Adjust for navbar height
+                        behavior: 'smooth'
+                    });
+
+                    // Update active link in navbar
+                    updateActiveLink(sectionId);
+                }
+            }
+
+            // Update active link in navbar  based on current section
+            function updateActiveLink(sectionId) {
+                // Remove active class from all links
+                const navlinks = document.querySelectorAll('.Navbar a');
+                navlinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Add active class to current section link
+                const currentLink = document.querySelector(`.Navbar a[href="#${sectionId}"]`);
+                if (currentLink) {
+                    currentLink.classList.add('active');
+                }
+            }
+
+            // Handle mobile menu toggle
+            document.addEventListener('DOMContentLoaded', function() {
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const navbar = document.getElementById('navbar');
+
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.addEventListener('click', function() {
+                        navbar.classList.toggle('show-menu');
+                    });
+                }
+
+                // Initialize contact form
+                initContactForm();
+
+                // Add scroll event listener for animations
+                window.addEventListener('scroll', handleScrollAnimations);
+
+                // Check if we need to highlight any sections on load
+                checkCurrentSection();
+            });
+
+            // Initialize contact form
+            function initContactForm() {
+                const contactForm = document.getElementById('contactForm');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+
+                        // Get form values
+                        const name = document.getElementById('name').value;
+                        const email = document.getElementById('Email').value;
+                        const message = document.getElementById('Message').value;
+
+                        // Simple validation
+                        if (!name || !email || !message) {
+                            alert('Please fill out all fields,');
+                            return;
+                        }
+
+                        // Validate email format
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(email)) {
+                            alert('Please enter a valid email address.');
+                            return;
+                        }
+
+                        // Simulate form submission
+                        alert(`Thank you, ${name}! Your message has been sent successfully.`);
+
+                        // Reset form
+                        contactForm.reset();
+                    });
+                }
+            }
+
+            // Handle scroll animations
+            function handleScrollAnimations() {
+                const elements = document.querySelectorAll('.Column_1, .Column_2, .Video_Text, .Row');
+
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+
+                    // If element is in viewport
+                    if (elementTop < window.innerHeight && elementBottom > 0) {
+                        element.classList.add('fade-in', 'visible');
+                    }
+                });
+            }
+
+            // Check current section based on scroll position
+            function checkCurrentSection() {
+                const sections = ['Home', 'About', 'GitHub', 'Contact'];
+                let currentSection = 'Home';
+
+                sections.forEach(sectionId => {
+                    const element = document.getElementById(sectionId);
+                    if (element) {
+                        const elementTop = element.getBoundingClientRect().top;
+                        const elementBottom = element.getBoundingClientRect().bottom;
+
+                        // If element is in viewport
+                        if (elementTop < window.innerHeight / 2 && elementBottom > window.innerHeight / 2) {
+                            currentSection = sectionId;
+                        }
+                    }
+                });
+
+                updateActiveLink(currentSection);
+            }
+
+            // Add event listeners for smooth scrolling
+            document.querySelectorAll('.Navbar a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    scrollToSection(targetId);
+                });
+            });
+
+            // Add hover effects to images
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.filter = 'grayscale(5%)';
+                    this.style.boxShadow = '0 10px 25px rgba(0,0,0,0.3)';
+                });
+
+                img.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.filter = 'grayscale(75%)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+
+            // Add click effect to submit button
+            document.querySelector('input[type="submit"]').addEventListener('mousedown', function() {
+                this.style.transform = 'scale(1.5)';
+            });
+
+            document.querySelector('input[type="submit"]').addEventListener('mouseup', function() {
+                this.style.transform = 'scale(1)';
+            });
+
+            // Add keyboard navigation support
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowDown') {
+                    // Scroll down
+                    window.scrollBy(0, 100);
+                } else if (e.key === 'ArrowUp') {
+                    // Scroll up
+                    window.scrollBy(0, -100);
+                }
+            });
+
+            // Add dynamic content based on current date
+            const today = new Date();
+            const year = today.getFullYear();
+            document.querySelector('footer p').innerHTML = `&copy; ${year} Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank" rel="noopener" class="underline-link">The Tech Academy</a>`;
+
+            // Add loading animation for page
+            window.addEventListener('load', function() {
+                // Add fade-in effect to main content
+                setTimeout(() => {
+                    document.body.style.opacity = '1';
+                    document.body.style.transition = 'opacity 0.5s ease';
+                }, 100);
+                });
+
+                // Add tooltip functionality for links
+                document.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('mouseenter', function() {
+                        this.style.textDecoration = 'underline';
+                        this.style.color = '#0056b3';
+                    });
+
+                    link.addEventListener('mouseleave', function() {
+                        this.style.textDecoration = 'none';
+                        this.style.color = 'blue';
+                    });
+                });
+
+                // Highlight upgraded JavaScript features in the About section
+                function highlightUpgradedLines() {
+                    const aboutParagraph = document.querySelector('#About .Column_1 p');
+                    if (aboutParagraph) {
+                        let html = aboutParagraph.innerHTML;
+
+                        // Highlight the lines that mention JavaScript upgrades
+                        html = html.replace(
+                            /(trained and experienced in the following web and programming languages: HTML, CSS, <span class="upgraded-feature">JavaScript<\/span>, SQL, C# and more\.)/, '<span class="upgraded-feature">$1</span>'
+                        );
+
+                        // Highlight the full-stack developer line if it mentions JavaScript
+                        html = html.replace(
+                            /(I am a full-stack developer and would love to work with you on your project\.)/, '<span class="upgraded-feature">$1</span>'
+                        );
+
+                        // Specifically highlight JavaScript in the list
+                        html = html.replace(/JavaScript/g, '<span class="upgraded-feature">JavaScript</span>');
+
+                        aboutParagraph.innerHTML = html;
+                    }
+                }
+
+                // Run highlighting after DOM is loaded
+                document.addEventListener('DOMContentLoaded', highlightUpgradedLines);
+        </script>
+    </body>
+</html>
