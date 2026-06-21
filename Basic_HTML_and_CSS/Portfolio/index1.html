@@ -403,6 +403,28 @@
                 from {opacity: 0.4}
                 to {opacity: 1}
             }
+
+            /* Sticky Contact Button */
+            .sticky-contact {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #2c3e50;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+                transition: background-color 0.3s;
+                z-index: 1001;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            }
+
+            .sticky-contact:hover {
+                background-color: #3498db;
+            }
     
             /* Popup Contact Form Styles */
             .popup-container {
@@ -651,6 +673,9 @@
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
+
+        <!-- Sticky Contact Button -->
+        button class="sticky-contact" onclick="openContactForm()">Contact Me</button>
 
         <!-- Popup Contact Form -->
         <div class="popup-container" id="popupContactForm">
