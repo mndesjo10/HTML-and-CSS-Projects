@@ -103,10 +103,10 @@
             <img src="img/my-photo.jpeg" alt="Projects 1">
         </div>
         <div class="mySlides fade">
-            <img src="img/my-photo2.jpeg" alt="Projects 2">
+            <img src="img/slideshow2.jpg" alt="Projects 2">
         </div>
         <div class="mySlides fade">
-            <img src="img/my-photo.jpeg" alt="Projects 3">
+            <img src="img/slideshow3.jpg" alt="Projects 3">
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -126,28 +126,27 @@
     <div class="popup-container" id="popupContactForm">
         <div class="popup-form">
             <div class="popup-header">
-                <h2 class="popup-title">Contact</h2>
+                <h2 class="popup-title">Contact Me</h2>
+                <button class="popup-close" onclick="closeContactForm()" aria-label="Close form">&times;</button>
             </div>
             <form id="contactForm">
                 <div class="popup-form-group">
-                    <label class="popup-label" for="popupName">Name</label>
-                    <input type="text" id="popupName" name="name" required class="popup-input" placeholder="Type your name here">
+                    <label class="popup-label" for="popupName">Name:</label>
+                    <input type="text" id="popupName" name="name" required class="popup-input" placeholder="Please enter your name">
                 </div>
                 <div class="popup-form-group">
-                    <label class="popup-label" for="popupPhone">Phone</label>
-                    <input type="tel" id="popupPhone" name="phone" class="popup-input" placeholder="Type your phone number here">
+                    <label class="popup-label" for="popupEmail">Email:</label>
+                    <input type="email" id="popupEmail" name="email" required class="popup-input" placeholder="Please enter your email address">
                 </div>
                 <div class="popup-form-group">
-                    <label class="popup-label" for="popupEmail">Email</label>
-                    <input type="email" id="popupEmail" name="email" required class="popup-input" placeholder="Type your email address here">
+                    <label class="popup-label" for="popupMessage">Message:</label>
+                    <textarea id="popupMessage" name="message" required class="popup-input" placeholder="Please write your message"></textarea>
                 </div>
-                <div class="popup-form-group">
-                    <label class="popup-label" for="popupMessage">Message</label>
-                    <textarea id="popupMessage" name="message" required class="popup-input" placeholder="Type your message here"></textarea>
-                </div>
-                <button type="submit" class="popup-submit">Submit</button>
-                <button type="button" class="popup-close-btn" onclick="closeContactForm()">Close</button>
+                <button type="submit" class="popup-submit">Send Message</button>
             </form>
+            <div class="popup-footer">
+                I'll get back to you as soon as possible!
+            </div>
         </div>
     </div>
 
